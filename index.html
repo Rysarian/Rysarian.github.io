@@ -1,1 +1,25 @@
-"Hello World" 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="google-signin-client_id" content="603050401222-t4ukkvhalf8f1mn4np09slde7335mc5j.apps.googleusercontent.com">
+  <title>Document</title>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="base.js" charset="utf-8"></script>
+</head>
+<body>
+  "Hello World!"
+  <div class="g-signin2" data-onsuccess="onSignIn"></div>
+  <a href="#" onclick="signOut();">Sign out</a>
+  <script>
+    function signOut() {
+      var auth2 = gapi.auth2.getAuthInstance();
+      auth2.signOut().then(function () {
+        console.log('User signed out.');
+      });
+    }
+  </script>
+</body>
+</html>
